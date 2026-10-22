@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>无人机视觉导航 · 教学实验平台</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<aside class="rail">
+  <a class="brand" href="/" aria-label="平台首页"><svg viewBox="0 0 48 48"><path d="M16 16 32 32M16 32 32 16"/><circle cx="12" cy="12" r="8"/><circle cx="36" cy="12" r="8"/><circle cx="12" cy="36" r="8"/><circle cx="36" cy="36" r="8"/><rect x="19" y="19" width="10" height="10" rx="3"/></svg></a>
+  <div class="rail-item selected"><span>◉</span><small>实验台</small></div>
+  <div class="rail-line"></div><div class="rail-foot">VLN<br><span>LAB</span></div>
+</aside>
+<main>
+  <header>
+    <div><div class="eyebrow">EMBODIED AI / CLASSROOM LAB</div><h1>无人机视觉导航<span>仿真实验台</span></h1></div>
+    <div class="connection"><i id="connection-dot"></i><span id="connection">连接中</span><span class="env">HM3D · OVON</span></div>
+  </header>
+  <section class="toolbar">
+    <div class="session"><span class="status-dot" id="status-dot"></span><strong id="status">待机</strong><span id="message">等待开始仿真</span></div>
+    <div class="buttons"><button id="start" class="primary">▶ <span>开始仿真</span></button><button id="pause" disabled>Ⅱ 暂停</button><button id="reset">↻ 刷新场景</button><button id="exit" class="exit">退出</button></div>
+  </section>
+  <section class="mission" id="mission"><div><span class="label">目标任务</span><strong id="target">—</strong><span id="instruction">开始后随机加载场景与任务</span></div><div class="mission-meta"><span>场景 <b id="scene">—</b></span><span>步数 <b id="steps">—</b></span><span>定高 <b id="altitude">—</b></span></div></section>
+  <section class="workspace">
+    <article class="panel camera-panel">
+      <div class="panel-title"><h2><span class="title-index">01</span>前视相机</h2><div class="panel-tag">RGB · 640 × 480</div></div>
+      <div class="camera-view" id="camera-view">
+        <img id="camera" alt="无人机实时前视画面" hidden><canvas id="boxes" hidden></canvas>
+        <div class="empty" id="camera-empty"><svg viewBox="0 0 48 48"><rect x="6" y="12" width="29" height="25" rx="5"/><path d="m35 20 9-5v20l-9-5M16 6h10"/><circle cx="20" cy="24" r="6"/></svg><span>前视相机</span><small>开始仿真后显示实时画面</small></div>
+        <div class="camera-hud" id="camera-hud" hidden><span><i></i> <b id="live-state">LIVE</b></span><span id="camera-time">t = 0.00 s</span></div>
+        <div class="camera-action" id="action" hidden></div>
+      </div>
+      <div class="camera-footer"><span><i class="legend-box"></i>视觉模型预测框</span><span id="box-note">目标类别由 ObjectNav 任务提供</span></div>
+    </article>
+    <div class="right-stack">
+      <article class="panel map-panel">
+        <div class="panel-title"><h2><span class="title-index">02</span>在线建图</h2><span class="badge" id="tracking">等待初始化</span></div>
+        <div class="map-view"><canvas id="map" hidden></canvas><div class="empty light" id="map-empty"><svg viewBox="0 0 48 48"><path d="m7 13 11-5 12 5 11-5v27l-11 5-12-5-11 5ZM18 8v27M30 13v27"/></svg><span>ORB-SLAM3 稀疏地图</span><small>初始位姿对齐后，随运动持续构建</small></div></div>
+        <div class="map-footer"><span><i class="dot gray"></i>地图点 <b id="map-count">—</b></span><span><i class="dot teal"></i>估计轨迹</span><span id="map-scale">世界坐标 / m</span></div>
+      </article>
+      <article class="panel pose-panel"><div class="panel-title"><h2><span class="title-index">03</span>定位坐标</h2><span class="panel-tag">含噪 IMU 惯导 · m</span></div>
+        <div class="coordinates"><div><span>X</span><strong id="pos-x">—</strong></div><div><span>Y</span><strong id="pos-y">—</strong></div><div><span>Z</span><strong id="pos-z">—</strong></div></div>
+        <div class="pose-footer"><span>平均定位误差 <b id="loc-error">—</b></span><span id="loc-state">等待测量</span></div>
+      </article>
+    </div>
+  </section>
+  <section class="bottom-grid">
+    <article class="panel detection-panel"><div class="panel-title"><h2><span class="title-index">04</span>物体识别</h2><span id="recognition-model" class="panel-tag">本地视觉推理</span></div><div id="detections" class="detection-content"><div class="text-empty">开始后显示类别与置信度</div></div></article>
+    <article class="panel performance-panel"><div class="panel-title"><h2><span class="title-index">05</span>运行频率</h2><span class="panel-tag" id="frequency-kind" hidden></span></div><div class="frequency single-frequency"><div><span>运控发布频率</span><strong id="e2e-hz">—</strong><small>Hz</small></div></div><div class="performance-note" id="performance-note" hidden></div></article>
+    <article class="panel drone-panel"><div class="panel-title"><h2><span class="title-index">06</span>无人机视角</h2><span class="panel-tag">PX4 IRIS</span></div><div class="overview-view"><img id="overview" alt="场景中无人机的第三人称画面" hidden><div class="text-empty" id="overview-empty">开始后显示场景与无人机</div></div></article>
+  </section>
+  <section class="logbar"><span class="log-label">运行日志</span><span id="event">准备就绪，点击“开始仿真”启动一次课堂实验。</span><span id="run-id"></span></section>
+  <footer><span>INTERNVLA-N1 DUALVLN <i>+</i> ORB-SLAM3 <i>+</i> VISUAL RECOGNITION</span><span>固定高度 1.4 m · 无噪声 · 单次最多 500 步</span></footer>
+</main>
+<script src="/format.js"></script><script src="/app.js"></script>
+</body></html>

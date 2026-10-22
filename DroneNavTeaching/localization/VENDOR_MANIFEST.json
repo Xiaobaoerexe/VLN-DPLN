@@ -1,0 +1,18 @@
+{
+  "ORB_SLAM3": {
+    "repository": "https://github.com/UZ-SLAMLab/ORB_SLAM3",
+    "commit": "4452a3c4ab75b1cde34e5505a36ec3f9edcdc4c4",
+    "commit_verified_from": "GitHub archive global PAX comment and git ls-remote",
+    "archive_sha256": "dbd8c67a8a356bc4a87e872de5005b6110e8083734ac5c1158d2d7612e79b700",
+    "source_subset_archive_sha256": "b2bc12486aa895deba6e56ba162d40a84e2bddd0823a8872b0ac29ec28342fce",
+    "license": "GPL-3.0",
+    "local_changes": ["Disable example executables", "C++14 for Pangolin compatibility", "Public read-only GetTeachingAtlas accessor"]
+  },
+  "Pangolin": {
+    "repository": "https://github.com/stevenlovegrove/Pangolin",
+    "tag": "v0.8",
+    "license": "MIT",
+    "local_changes": ["Include cstdint to support GCC13", "Disable tools and examples", "Install under project vendor/pangolin-install"]
+  },
+  "build_environment": {"OS": "Ubuntu 24.04", "compiler": "GCC 13.3", "OpenCV": "4.6.0", "Boost": "1.83", "Python_wrapper": "3.8 ovon", "GPU_required_for_SLAM": false}
+}

@@ -1,0 +1,27 @@
+{
+  "models": [
+    {
+      "name": "YOLO11s",
+      "license": "AGPL-3.0",
+      "source": "https://huggingface.co/Ultralytics/YOLO11/resolve/main/yolo11s.pt",
+      "download_mirror": "https://hf-mirror.com/Ultralytics/YOLO11/resolve/main/yolo11s.pt",
+      "path": "yolo11s.pt",
+      "sha256": "85a76fe86dd8afe384648546b56a7a78580c7cb7b404fc595f97969322d502d5"
+    },
+    {
+      "name": "DINOv2-S/14",
+      "license": "Apache-2.0",
+      "source": "https://huggingface.co/facebook/dinov2-small",
+      "download_mirror": "https://hf-mirror.com/facebook/dinov2-small",
+      "path": "dinov2-small/model.safetensors",
+      "sha256": "ae1e99fcefd534ed978cdeb8326f08030c96e28b7a81ffcbc98a857c84d14be1"
+    }
+  ],
+  "runtime": {
+    "python": "3.10.18 (main, Jun  5 2025, 13:14:17) [GCC 11.2.0]",
+    "torch": "2.5.1+cu118",
+    "transformers": "4.51.0",
+    "ultralytics": "8.3.228",
+    "opencv": "4.11.0"
+  }
+}

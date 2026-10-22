@@ -1,0 +1,20 @@
+{
+  "name": "PX4 Iris",
+  "source": "https://github.com/PX4/PX4-SITL_gazebo-classic/tree/main/models/iris",
+  "mesh_url": "https://raw.githubusercontent.com/PX4/PX4-SITL_gazebo-classic/main/models/iris/meshes/iris.stl",
+  "license": "Upstream attribution retained; see PX4_SOURCE.txt",
+  "units": "meters",
+  "bounds": [
+    [
+      -0.24057234823703766,
+      -0.06703685224056244,
+      -0.14307817816734314
+    ],
+    [
+      0.23713898658752441,
+      0.046631425619125366,
+      0.1563015580177307
+    ]
+  ],
+  "sha256": "22912b627a0fc9a5ee7190d08537ec2b7680ead4a80ceb9081ab76e96da967bd"
+}
