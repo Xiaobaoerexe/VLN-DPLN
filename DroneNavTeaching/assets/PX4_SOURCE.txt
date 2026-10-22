@@ -1,0 +1,6 @@
+Iris quadrotor visual asset downloaded from the official PX4 simulator repository.
+Mesh: https://raw.githubusercontent.com/PX4/PX4-SITL_gazebo-classic/main/models/iris/meshes/iris.stl
+Repository: https://github.com/PX4/PX4-SITL_gazebo-classic
+Retrieved 2026-10-20. The original STL is retained alongside the converted GLB.
+Conversion changes only coordinate convention (Z-up to Y-up) and display color.
+Upstream mesh file has no embedded license header. No unverified license claim is made.

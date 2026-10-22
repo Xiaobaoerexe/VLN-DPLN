@@ -1,0 +1,45 @@
+{
+  "source": "/home/abc/Documents/VLN/test/InternNav-main/checkpoints/InternVLA-N1-DualVLN",
+  "public_model": "InternRobotics/InternVLA-N1-DualVLN",
+  "index_metadata": {
+    "total_size": 16767077782
+  },
+  "parameter_entries": 1338,
+  "files": [
+    {
+      "name": "model-00001-of-00004.safetensors",
+      "size": 4968272072,
+      "sha256": "20568d171de945f90a639660269e95b683fa7d3bfbe0d289061def253bbf25fa",
+      "hash_elapsed_s": 3.826263964001555,
+      "public_lfs_sha256": "20568d171de945f90a639660269e95b683fa7d3bfbe0d289061def253bbf25fa",
+      "matches_public_lfs_sha256": true
+    },
+    {
+      "name": "model-00002-of-00004.safetensors",
+      "size": 4991495816,
+      "sha256": "5f428e520713b4e69127fd7bda6b1b2e102a49b3413c5b66a86cf7dd7ec33353",
+      "hash_elapsed_s": 3.6185224699875107,
+      "public_lfs_sha256": "5f428e520713b4e69127fd7bda6b1b2e102a49b3413c5b66a86cf7dd7ec33353",
+      "matches_public_lfs_sha256": true
+    },
+    {
+      "name": "model-00003-of-00004.safetensors",
+      "size": 4932751040,
+      "sha256": "065ccb104faf4dd6b5c408fd56d2a36e7ba91aa2d0165897cf2c9143b10144be",
+      "hash_elapsed_s": 3.5804373569990275,
+      "public_lfs_sha256": "065ccb104faf4dd6b5c408fd56d2a36e7ba91aa2d0165897cf2c9143b10144be",
+      "matches_public_lfs_sha256": true
+    },
+    {
+      "name": "model-00004-of-00004.safetensors",
+      "size": 1874713510,
+      "sha256": "0a841defcc20609d0bb12e8c5666edd016e7d4f180b55ed64eb71b27e9c850c0",
+      "hash_elapsed_s": 1.3625673909991747,
+      "public_lfs_sha256": "0a841defcc20609d0bb12e8c5666edd016e7d4f180b55ed64eb71b27e9c850c0",
+      "matches_public_lfs_sha256": true
+    }
+  ],
+  "public_revision": "a698a9e898b4001621a319e1bc89f02ec715cc86",
+  "all_shards_exist": true,
+  "total_checkpoint_bytes": 16767232438
+}
